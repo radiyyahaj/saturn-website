@@ -66,21 +66,7 @@
       background: linear-gradient(to bottom, #000000 0%, #1c1c1a 15%, #4d4d47 40%, #b2afa4 65%, #f5f4f0 90%);
     }
 
-    /* GRAIN — heavy animated film grain overlay */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: -50%;
-      width: 300%;
-      height: 300%;
-      pointer-events: none;
-      z-index: 9000;
-      opacity: 0.40;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.2' numOctaves='6' stitchTiles='stitch'/%3E%3CfeComponentTransfer%3E%3CfeFuncR type='discrete' tableValues='0 1'/%3E%3CfeFuncG type='discrete' tableValues='0 1'/%3E%3CfeFuncB type='discrete' tableValues='0 1'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-      background-size: 200px 200px;
-      mix-blend-mode: overlay;
-      animation: grainShift 0.3s steps(6) infinite;
-    }
+    /* GRAIN — removed */
 
     /* CURSOR */
     .cursor {
@@ -272,7 +258,7 @@
     #about {
       min-height: 100vh;
       max-height: 100vh;
-      padding: 6rem 4rem 3rem;
+      padding: 4rem 4rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -365,7 +351,7 @@
 
     /* ======== HISTORY ======== */
     #history {
-      padding: 6rem 4rem;
+      padding: 4rem 4rem;
       position: relative;
     }
     .history-label {
@@ -391,7 +377,11 @@
       width: 100%;
       height: auto;
       display: block;
+      max-height: 70vh;
+      object-fit: contain;
     }
+    .timeline-mobile { display: none; }
+    .timeline-desktop { display: block; }
 
     /* ======== VERTICALS ======== */
     #services { padding: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
@@ -633,7 +623,7 @@
 
     /* ======== NETWORK MARQUEE ======== */
     #clients {
-      padding: 6rem 0;
+      padding: 4rem 0;
       position: relative;
       overflow: hidden;
     }
@@ -713,7 +703,7 @@
 
     /* ======== CONTACT ======== */
     #contact {
-      padding: 6rem 4rem;
+      padding: 4rem 4rem;
       position: relative;
     }
 
@@ -839,7 +829,7 @@
 
     /* ======== FOOTER ======== */
     footer {
-      padding: 4rem 4rem 2rem;
+      padding: 4rem 4rem;
       border-top: 1px solid rgba(0,0,0,0.07);
     }
     .footer-top {
@@ -999,13 +989,7 @@
       0%, 100% { transform: scale(1); opacity: 1; }
       50% { transform: scale(1.15); opacity: 0.5; }
     }
-    @keyframes grainShift {
-      0% { transform: translate(0, 0); }
-      25% { transform: translate(-5%, -10%); }
-      50% { transform: translate(3%, 7%); }
-      75% { transform: translate(-8%, 2%); }
-      100% { transform: translate(5%, -5%); }
-    }
+    /* grainShift removed */
 
     /* ======== RESPONSIVE ======== */
     /* ======== IPAD / TABLET (769px to 1024px) ======== */
@@ -1014,14 +998,16 @@
       nav.nav-scrolled { padding: 0.8rem 2.5rem; }
       .nav-links { gap: 1.8rem; }
       .nav-links > li > a { font-size: 0.6rem; }
-      #about { padding: 5rem 2.5rem 3rem; }
+      #about { padding: 4rem 2.5rem; }
       .about-display { font-size: clamp(1.8rem, 3.5vw, 3rem); }
       #history { padding: 4rem 2.5rem; }
+      .timeline-desktop { display: none; }
+      .timeline-mobile { display: block; max-height: 80vh; width: auto; margin: 0 auto; }
       .vertical-panel { width: 72vw; padding: 2rem 2.5rem; }
       .verticals-outer { scroll-padding-left: calc((100vw - 72vw) / 2); }
       .verticals-track { padding: 1.5rem calc((100vw - 72vw) / 2); }
       #contact { padding: 4rem 2.5rem; }
-      footer { padding: 4rem 2.5rem 2rem; }
+      footer { padding: 4rem 2.5rem; }
     }
 
     /* ======== SMALL TABLET / LARGE PHONE (max 768px) ======== */
@@ -1033,15 +1019,15 @@
       .nav-dropdown { position: fixed; top: auto; left: 1.5rem; right: 1.5rem; transform: none; min-width: auto; }
       .nav-links > li:hover .nav-dropdown { transform: none; }
 
-      #about { max-height: none; min-height: auto; padding: 5rem 1.5rem 3rem; }
+      #about { max-height: none; min-height: auto; padding: 4rem 1.5rem; }
       .about-display { font-size: clamp(1.6rem, 5vw, 2.5rem); }
       .about-lower { grid-template-columns: 1fr; gap: 2rem; }
       .about-label { font-size: 0.55rem; }
 
       #history { padding: 4rem 1.5rem; }
       .history-label { font-size: clamp(1.6rem, 5vw, 2.5rem); }
-      .history-image { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-      .history-image img { min-width: 900px; }
+      .timeline-desktop { display: none; }
+      .timeline-mobile { display: block; max-height: 75vh; width: auto; margin: 0 auto; }
 
       #services { height: auto; min-height: 80vh; }
       .services-intro { padding: 1.5rem 1.5rem 1rem; }
@@ -1064,7 +1050,7 @@
 
       .footer-top { grid-template-columns: 1fr; gap: 2.5rem; }
       .footer-col-right { text-align: left; }
-      footer { padding: 3rem 1.5rem 2rem; }
+      footer { padding: 4rem 1.5rem; }
 
       .hero-planet { width: 100%; height: 100%; }
       .hero-title { font-size: clamp(3rem, 14vw, 7rem); }
@@ -1080,13 +1066,14 @@
       .nav-links > li > a { font-size: 0.5rem; letter-spacing: 0.12em; }
       .nav-dropdown { left: 1rem; right: 1rem; }
 
-      #about { padding: 4rem 1rem 2.5rem; }
+      #about { padding: 4rem 1rem; }
       .about-display { font-size: clamp(1.4rem, 6vw, 2rem); }
       .about-body p { font-size: 0.8rem; }
 
-      #history { padding: 3rem 1rem; }
+      #history { padding: 4rem 1rem; }
       .history-label { font-size: clamp(1.4rem, 6vw, 2rem); }
-      .history-image img { min-width: 700px; }
+      .timeline-desktop { display: none; }
+      .timeline-mobile { display: block; max-height: 70vh; width: auto; margin: 0 auto; }
 
       .services-intro { padding: 1.2rem 1rem 0.8rem; }
       .services-title { font-size: clamp(1.4rem, 6vw, 2rem); }
@@ -1100,11 +1087,11 @@
       .clients-heading { padding: 0 1rem; font-size: clamp(1.4rem, 6vw, 2rem); }
       .clients-section-label { padding: 0 1rem; font-size: 0.5rem; }
 
-      #contact { padding: 3rem 1rem; }
+      #contact { padding: 4rem 1rem; }
       .contact-heading { font-size: clamp(1.4rem, 6vw, 2rem); }
       .contact-sub { font-size: 0.75rem; }
 
-      footer { padding: 2.5rem 1rem 1.5rem; }
+      footer { padding: 4rem 1rem; }
       .footer-wordmark { font-size: clamp(3rem, 15vw, 5rem); }
       .hero-title { font-size: clamp(2.5rem, 16vw, 5rem); }
     }
@@ -1176,7 +1163,8 @@
   <section id="history">
     <div class="history-label reveal">our <em>history</em></div>
     <div class="history-image reveal">
-      <img src="timeline.png" alt="Saturn Timeline" />
+      <img src="timeline/timeline.png" alt="Saturn Timeline" class="timeline-desktop" />
+      <img src="timeline/timeline%20vertical.png" alt="Saturn Timeline" class="timeline-mobile" />
     </div>
   </section>
 
