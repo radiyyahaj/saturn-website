@@ -353,6 +353,8 @@
     #history {
       padding: 4rem 4rem;
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
     .history-label {
       font-family: var(--font-heading);
@@ -374,20 +376,17 @@
       width: 100%;
       display: flex;
       justify-content: center;
+      align-items: center;
     }
     .history-image img {
       width: 100%;
       height: auto;
       display: block;
-      max-height: 70vh;
-      object-fit: contain;
     }
     .history-image .timeline-mobile { display: none; }
     .history-image .timeline-desktop { display: block; }
-    .history-image .timeline-mobile {
-      width: auto;
-      max-width: 90%;
-      margin: 0 auto;
+    .history-image-box {
+      display: none;
     }
 
     /* ======== VERTICALS ======== */
@@ -1008,8 +1007,26 @@
       #about { padding: 4rem 2.5rem; }
       .about-display { font-size: clamp(1.8rem, 3.5vw, 3rem); }
       #history { padding: 4rem 2.5rem; }
-      .history-image .timeline-desktop { display: none; }
-      .history-image .timeline-mobile { display: block; max-height: 80vh; width: auto; margin: 0 auto; }
+      .history-image { display: none; }
+      .history-image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        margin: 0 auto;
+        height: 70vh;
+        border: 1px solid rgba(245,244,240,0.12);
+        border-radius: 0;
+        overflow: hidden;
+        background: rgba(245,244,240,0.03);
+      }
+      .history-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        padding: 1.5rem;
+      }
       .vertical-panel { width: 72vw; padding: 2rem 2.5rem; }
       .verticals-outer { scroll-padding-left: calc((100vw - 72vw) / 2); }
       .verticals-track { padding: 1.5rem calc((100vw - 72vw) / 2); }
@@ -1033,8 +1050,25 @@
 
       #history { padding: 4rem 1.5rem; }
       .history-label { font-size: clamp(1.6rem, 5vw, 2.5rem); }
-      .history-image .timeline-desktop { display: none; }
-      .history-image .timeline-mobile { display: block; max-height: 75vh; width: auto; margin: 0 auto; }
+      .history-image { display: none; }
+      .history-image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: 0 auto;
+        height: 70vh;
+        border: 1px solid rgba(245,244,240,0.12);
+        overflow: hidden;
+        background: rgba(245,244,240,0.03);
+      }
+      .history-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        padding: 1rem;
+      }
 
       #services { height: auto; min-height: 80vh; }
       .services-intro { padding: 1.5rem 1.5rem 1rem; }
@@ -1079,8 +1113,25 @@
 
       #history { padding: 4rem 1rem; }
       .history-label { font-size: clamp(1.4rem, 6vw, 2rem); }
-      .history-image .timeline-desktop { display: none; }
-      .history-image .timeline-mobile { display: block; max-height: 70vh; width: auto; margin: 0 auto; }
+      .history-image { display: none; }
+      .history-image-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 92%;
+        margin: 0 auto;
+        height: 65vh;
+        border: 1px solid rgba(245,244,240,0.12);
+        overflow: hidden;
+        background: rgba(245,244,240,0.03);
+      }
+      .history-image-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+        padding: 0.8rem;
+      }
 
       .services-intro { padding: 1.2rem 1rem 0.8rem; }
       .services-title { font-size: clamp(1.4rem, 6vw, 2rem); }
@@ -1171,7 +1222,9 @@
     <div class="history-label reveal">our <em>history</em></div>
     <div class="history-image reveal">
       <img src="timeline.png" alt="Saturn Timeline" class="timeline-desktop" />
-      <img src="timeline%20vertical.png" alt="Saturn Timeline" class="timeline-mobile" />
+    </div>
+    <div class="history-image-box reveal">
+      <img src="timeline%20vertical.png" alt="Saturn Timeline" />
     </div>
   </section>
 
