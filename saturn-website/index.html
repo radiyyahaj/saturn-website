@@ -349,46 +349,6 @@
       font-weight: 300;
     }
 
-    /* ======== HISTORY ======== */
-    #history {
-      padding: 4rem 4rem;
-      position: relative;
-      display: flex;
-      flex-direction: column;
-    }
-    .history-label {
-      font-family: var(--font-heading);
-      font-size: clamp(2rem, 4vw, 3.5rem);
-      font-weight: 200;
-      line-height: 1;
-      text-transform: lowercase;
-      letter-spacing: 0.02em;
-      color: var(--white);
-      margin-bottom: 2.5rem;
-    }
-    .history-label em {
-      font-family: var(--font-accent);
-      font-style: italic;
-      font-weight: 300;
-      color: rgba(245,244,240,0.4);
-    }
-    .history-image {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .history-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-    .history-image .timeline-mobile { display: none; }
-    .history-image .timeline-desktop { display: block; }
-    .history-image-box {
-      display: none;
-    }
-
     /* ======== VERTICALS ======== */
     #services { padding: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
 
@@ -1006,17 +966,6 @@
       .nav-links > li > a { font-size: 0.6rem; }
       #about { padding: 4rem 2.5rem; }
       .about-display { font-size: clamp(1.8rem, 3.5vw, 3rem); }
-      #history { padding: 4rem 0; }
-      .history-label { padding: 0 2.5rem; }
-      .history-image { display: none; }
-      .history-image-box {
-        display: block;
-      }
-      .history-image-box img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
       .vertical-panel { width: 72vw; padding: 2rem 2.5rem; }
       .verticals-outer { scroll-padding-left: calc((100vw - 72vw) / 2); }
       .verticals-track { padding: 1.5rem calc((100vw - 72vw) / 2); }
@@ -1037,18 +986,6 @@
       .about-display { font-size: clamp(1.6rem, 5vw, 2.5rem); }
       .about-lower { grid-template-columns: 1fr; gap: 2rem; }
       .about-label { font-size: 0.55rem; }
-
-      #history { padding: 4rem 0; }
-      .history-label { font-size: clamp(1.6rem, 5vw, 2.5rem); padding: 0 1.5rem; }
-      .history-image { display: none; }
-      .history-image-box {
-        display: block;
-      }
-      .history-image-box img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
 
       #services { height: auto; min-height: 80vh; }
       .services-intro { padding: 1.5rem 1.5rem 1rem; }
@@ -1090,18 +1027,6 @@
       #about { padding: 4rem 1rem; }
       .about-display { font-size: clamp(1.4rem, 6vw, 2rem); }
       .about-body p { font-size: 0.8rem; }
-
-      #history { padding: 4rem 0; }
-      .history-label { font-size: clamp(1.4rem, 6vw, 2rem); padding: 0 1rem; }
-      .history-image { display: none; }
-      .history-image-box {
-        display: block;
-      }
-      .history-image-box img {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
 
       .services-intro { padding: 1.2rem 1rem 0.8rem; }
       .services-title { font-size: clamp(1.4rem, 6vw, 2rem); }
@@ -1184,17 +1109,6 @@
         <p>Saturn is a venture ecosystem headquartered in Cape Town, South Africa. Previously trading as W 3 O L A B S, we have invested in and incubated over 140 startups, built one of the continent's leading Web3 communities, and developed programs that have reached founders across Africa and LATAM.</p>
         <p>We work with early stage founders, corporates, and institutions. Our leadership has operated at the highest levels of African business and finance, navigating every wave of emerging technology from blockchain to AI, stablecoins, and fintech.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- HISTORY -->
-  <section id="history">
-    <div class="history-label reveal">our <em>history</em></div>
-    <div class="history-image reveal">
-      <img src="timeline.png" alt="Saturn Timeline" class="timeline-desktop" />
-    </div>
-    <div class="history-image-box reveal">
-      <img src="timeline%20vertical.png" alt="Saturn Timeline" />
     </div>
   </section>
 
