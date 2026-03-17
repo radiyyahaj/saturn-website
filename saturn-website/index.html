@@ -372,6 +372,8 @@
     }
     .history-image {
       width: 100%;
+      display: flex;
+      justify-content: center;
     }
     .history-image img {
       width: 100%;
@@ -382,6 +384,11 @@
     }
     .history-image .timeline-mobile { display: none; }
     .history-image .timeline-desktop { display: block; }
+    .history-image .timeline-mobile {
+      width: auto;
+      max-width: 90%;
+      margin: 0 auto;
+    }
 
     /* ======== VERTICALS ======== */
     #services { padding: 0; height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
