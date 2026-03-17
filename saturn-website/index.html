@@ -387,6 +387,13 @@
     .history-image .timeline-desktop { display: block; }
     .history-image-box {
       display: none;
+      width: 90%;
+      margin: 0 auto;
+    }
+    .history-image-box img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     /* ======== VERTICALS ======== */
@@ -1009,23 +1016,14 @@
       #history { padding: 4rem 2.5rem; }
       .history-image { display: none; }
       .history-image-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
         width: 85%;
         margin: 0 auto;
-        height: 70vh;
-        border: 1px solid rgba(245,244,240,0.12);
-        border-radius: 0;
-        overflow: hidden;
-        background: rgba(245,244,240,0.03);
       }
       .history-image-box img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
+        height: auto;
         display: block;
-        padding: 1.5rem;
       }
       .vertical-panel { width: 72vw; padding: 2rem 2.5rem; }
       .verticals-outer { scroll-padding-left: calc((100vw - 72vw) / 2); }
@@ -1052,22 +1050,14 @@
       .history-label { font-size: clamp(1.6rem, 5vw, 2.5rem); }
       .history-image { display: none; }
       .history-image-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
         width: 90%;
         margin: 0 auto;
-        height: 70vh;
-        border: 1px solid rgba(245,244,240,0.12);
-        overflow: hidden;
-        background: rgba(245,244,240,0.03);
       }
       .history-image-box img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
+        height: auto;
         display: block;
-        padding: 1rem;
       }
 
       #services { height: auto; min-height: 80vh; }
@@ -1115,22 +1105,14 @@
       .history-label { font-size: clamp(1.4rem, 6vw, 2rem); }
       .history-image { display: none; }
       .history-image-box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: block;
         width: 92%;
         margin: 0 auto;
-        height: 65vh;
-        border: 1px solid rgba(245,244,240,0.12);
-        overflow: hidden;
-        background: rgba(245,244,240,0.03);
       }
       .history-image-box img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
+        height: auto;
         display: block;
-        padding: 0.8rem;
       }
 
       .services-intro { padding: 1.2rem 1rem 0.8rem; }
