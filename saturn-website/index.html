@@ -298,7 +298,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
-      align-items: start;
+      align-items: stretch;
       flex: 1;
       min-height: 0;
     }
@@ -307,7 +307,6 @@
     .about-image-placeholder {
       width: 100%;
       height: 100%;
-      max-height: 40vh;
       background: rgba(245,244,240,0.04);
       border: 1px solid rgba(245,244,240,0.08);
       display: flex;
@@ -391,7 +390,7 @@
       scrollbar-width: none;
       cursor: grab;
       scroll-snap-type: x mandatory;
-      scroll-padding-left: calc((100vw - 62vw) / 2);
+      scroll-padding-left: calc((100vw - 68vw) / 2);
       flex: 1;
       min-height: 0;
       display: flex;
@@ -404,13 +403,13 @@
       display: flex;
       gap: 1.8rem;
       width: max-content;
-      padding: 2rem calc((100vw - 62vw) / 2);
+      padding: 2rem calc((100vw - 68vw) / 2);
       align-items: stretch;
       height: calc(100% - 4rem);
     }
 
     .vertical-panel {
-      width: 62vw;
+      width: 68vw;
       flex-shrink: 0;
       box-sizing: border-box;
       padding: 2.5rem 3.5rem;
@@ -442,7 +441,7 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2.5rem;
-      align-items: center;
+      align-items: stretch;
       flex: 1;
       min-height: 0;
       overflow: hidden;
@@ -503,6 +502,11 @@
       width: auto;
       object-fit: contain;
     }
+    .vertical-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
     .vertical-desc {
       font-family: var(--font-body);
       font-size: 0.85rem;
@@ -511,6 +515,20 @@
       font-weight: 300;
       max-width: 75ch;
     }
+    .vertical-desc p { margin-bottom: 1rem; }
+    .vertical-desc p:last-child { margin-bottom: 0; }
+    .vertical-desc ul {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin: 0.6rem 0 1rem;
+    }
+    .vertical-desc ul li {
+      margin-bottom: 0.4rem;
+      line-height: 1.65;
+    }
+    .color-grey { color: rgba(245,244,240,0.32); }
+    .color-blue { color: #92bbd8; }
+    .color-purple { color: #baadf5; }
 
     /* Image in vertical panels */
     .vertical-image {
@@ -1129,7 +1147,11 @@
           <div class="vertical-mid">
             <div class="vertical-text">
               <div class="vertical-name">saturn <em>ventures</em></div>
-              <div class="vertical-desc">Saturn Ventures deploys smart capital into early stage founders building across fintech, AI, and Web3. We sit close to every portfolio company, bringing hands on support across strategy, fundraising, and go to market, backed by a network and ecosystem we've spent years building. We are looking for founders with a clear thesis, a real problem, and the conviction to see it through.</div>
+              <div class="vertical-desc">
+                <p>Saturn Ventures deploys <span class="color-grey">smart capital</span> into early stage founders building across <span class="color-grey">fintech, AI, and Web3</span>. We sit close to every portfolio company, bringing hands on support across <span class="color-grey">strategy, fundraising</span>, and <span class="color-grey">go to market</span>, backed by a network and ecosystem we've spent years building.</p>
+                <p>Our team carries deep experience across both <span class="color-grey">emerging technology</span> and <span class="color-grey">institutional finance</span>. We understand the landscape, we understand the risk, and we structure our investments for <span class="color-grey">competitive market related returns</span>.</p>
+                <p>We are looking for founders with a clear thesis, a real problem, and the conviction to see it through.</p>
+              </div>
             </div>
             <div class="vertical-image">
               <img src="carousel/ventures%20pic.jpeg" alt="Saturn Ventures" />
@@ -1147,7 +1169,16 @@
           <div class="vertical-mid">
             <div class="vertical-text">
               <div class="vertical-name">saturn <em class="color-ecosystem">ecosystem</em></div>
-              <div class="vertical-desc">Saturn Ecosystem is our advisory and connectivity arm. We connect people to technology and bridge the gap between innovation and implementation. We work across three areas: corporate advisory and structured consulting for businesses navigating emerging technology, incubation and acceleration programs for technology partners who need founders building on their platforms, and an agency model that links corporates, institutions, and governments to the right technology partners, tools, and ecosystems.</div>
+              <div class="vertical-desc">
+                <p>Saturn Ecosystem is our <span class="color-blue">advisory and connectivity arm</span>.</p>
+                <p>We connect people to technology and <span class="color-blue">bridge the gap between innovation and implementation</span>.</p>
+                <p>We work across three areas:</p>
+                <ul>
+                  <li><span class="color-blue">corporate advisory</span> and structured consulting for businesses navigating emerging technology</li>
+                  <li><span class="color-blue">incubation and acceleration programs</span> for technology partners who need founders building on their platforms</li>
+                  <li>and an <span class="color-blue">agency model</span> that links corporates, institutions, and governments to the right technology partners, tools, and ecosystems.</li>
+                </ul>
+              </div>
             </div>
             <div class="vertical-image">
               <img src="carousel/ecosystem%20pic.jpeg" alt="Saturn Ecosystem" />
@@ -1165,7 +1196,11 @@
           <div class="vertical-mid">
             <div class="vertical-text">
               <div class="vertical-name">saturn <em class="color-foundation">foundation</em></div>
-              <div class="vertical-desc">Saturn Foundation is our CSI arm and our longest bet on Africa's future. We run programs for aspiring tech entrepreneurs aged 18 to 25, giving them the skills, mentorship, and network to build real tech companies. We partner with universities and institutions across South Africa to reach the founders who need it most. The Foundation exists because the pipeline matters. The best investment we can make in Africa's tech future is the people who will build it.</div>
+              <div class="vertical-desc">
+                <p>Saturn Foundation is our <span class="color-purple">CSI arm</span> and our longest bet on <span class="color-purple">Africa's future</span>.</p>
+                <p>We run programs for aspiring tech entrepreneurs aged <span class="color-purple">18 to 25</span> &ndash; giving them the skills, mentorship, and network to build <span class="color-purple">real tech companies</span>. We partner with <span class="color-purple">universities and institutions</span> across South Africa to reach the founders who need it most.</p>
+                <p>The Foundation exists because <span class="color-purple">the pipeline matters</span>. The best investment we can make in Africa's tech future is <span class="color-purple">the people who will build it</span>.</p>
+              </div>
             </div>
             <div class="vertical-image">
               <img src="carousel/foundation%20pic.jpg" alt="Saturn Foundation" />
