@@ -146,16 +146,6 @@ section { position: relative; padding: var(--section-y) 0; }
 .section-solid { background: var(--bg); }
 .section-raise { background: var(--bg); }
 
-/* ascii dot ground texture */
-.dotfield {
-  position: absolute; inset: 0; pointer-events: none;
-  background-image: radial-gradient(var(--ink-faint) 0.75px, transparent 0.75px);
-  background-size: 26px 26px;
-  opacity: 0.35;
-  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
-          mask-image: linear-gradient(to bottom, transparent, #000 18%, #000 82%, transparent);
-}
-
 /* ---------- nav: floating dark pill ---------- */
 .navbar {
   position: fixed; top: 18px; left: 0; right: 0; z-index: 50;
@@ -934,6 +924,14 @@ footer { border: 0; background: var(--bg); box-shadow: none; }
   .client-grid { grid-template-columns: repeat(2, 1fr); }
 }
 /* Touch devices get no hover, so the cards sit open in a stacked layout. */
+@media (max-width: 640px) {
+  .stl-track { padding: 0; }
+  .stl-rail { display: none; }
+  .stl-nodes { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem 1.2rem; }
+  .stl-node { min-width: 0; }
+  .stl-btn { align-items: flex-start; text-align: left; }
+  .stl-cap { text-align: left; }
+}
 @media (hover: none), (max-width: 640px) {
   .svc-inner { min-height: 0; }
   .svc-more { max-height: none; opacity: 1; margin-top: 1rem; overflow: visible; transform: none; }
@@ -1582,8 +1580,8 @@ body.has-announce .vhero { padding-top: calc(var(--nav-h) + 64px + 2rem); }
   .diff-grid { grid-template-columns: 1fr; }
   .announce { font-size: 0.62rem; letter-spacing: 0.1em; padding: 0.8rem 0.6rem; }
   .announce-text { white-space: normal; }
-  body.has-announce .navbar { top: 58px; }
-  body.has-announce .vhero { padding-top: calc(var(--nav-h) + 58px + 2rem); }
+  body.has-announce .navbar { top: 70px; }
+  body.has-announce .vhero { padding-top: calc(var(--nav-h) + 70px + 2rem); }
 }
 
 
