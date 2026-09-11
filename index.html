@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Saturn — Where bold ideas meet smart capital</title>
+<meta name="description" content="Saturn is the centre of gravity for Africa's tech economy. Capital, ecosystems, and impact in one orbit.">
+<link rel="stylesheet" href="assets/css/site.css">
+<style>
+  /* homepage hero */
+  #stage { position: fixed; inset: 0; z-index: 0; }
+  #sat-c { display: block; width: 100vw; height: 100vh; }
+  #hero { position: relative; height: 100vh; padding: 0; z-index: 1; pointer-events: none; }
+  main { position: relative; z-index: 1; background: var(--bg); }
+</style>
+</head>
+<body class="page-home">
+
+<nav class="navbar" aria-label="Primary">
+  <div class="nav-pill">
+    <a href="index.html" class="nav-logo" aria-label="Saturn home"><img src="assets/img/brand/saturn-mark.png" alt="Saturn"></a>
+    <button class="nav-burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <ul class="nav-menu">
+      <li><a class="nav-link" href="#story">About Us</a></li>
+      <li class="nav-drop">
+        <a class="nav-link" href="#verticals">Our Services</a>
+        <div class="drop-panel">
+          <a class="drop-item v-ventures" href="ventures.html">
+            <span class="t"><span class="sat">Saturn</span> <span class="sv-ventures">ventures</span></span>
+          </a>
+          <a class="drop-item v-ecosystem" href="ecosystem.html">
+            <span class="t"><span class="sat">Saturn</span> <span class="sv-ecosystem">ecosystem</span></span>
+          </a>
+          <a class="drop-item v-foundation" href="foundation.html">
+            <span class="t"><span class="sat">Saturn</span> <span class="sv-foundation">foundation</span></span>
+          </a>
+        </div>
+      </li>
+      <li><a class="nav-link" href="#contact">Get in Touch</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ASCII Saturn hero -->
+<div id="stage"><canvas id="sat-c"></canvas></div>
+<header id="hero"></header>
+
+<main>
+
+  <!-- partners marquee -->
+  <section class="partners">
+    <p class="label">Trusted by ambitious builders across Africa and beyond</p>
+    <div class="marquee">
+      <div class="marquee-track">
+        <!-- two identical halves; the loop shifts exactly half the track -->
+        <img src="assets/img/logos/channel-mobile.png" alt="Channel Mobile">
+        <img src="assets/img/logos/virgin-active.png" alt="Virgin Active">
+        <img src="assets/img/logos/polygon.svg" alt="Polygon">
+        <img src="assets/img/logos/stellar.svg" alt="Stellar">
+        <img src="assets/img/logos/lisk.png" alt="Lisk">
+        <img src="assets/img/logos/arena.png" alt="Arena">
+        <img src="assets/img/logos/uct.svg" alt="University of Cape Town">
+        <img src="assets/img/logos/uj.png" alt="University of Johannesburg">
+        <img src="assets/img/logos/ethereum.svg" alt="Ethereum">
+        <img src="assets/img/logos/abby-health.png" alt="Abby Health">
+        <img src="assets/img/logos/channel-mobile.png" alt="" aria-hidden="true">
+        <img src="assets/img/logos/virgin-active.png" alt="" aria-hidden="true">
+        <img src="assets/img/logos/polygon.svg" alt="" aria-hidden="true">
+        <img src="assets/img/logos/stellar.svg" alt="" aria-hidden="true">
+        <img src="assets/img/logos/lisk.png" alt="" aria-hidden="true">
+        <img src="assets/img/logos/arena.png" alt="" aria-hidden="true">
+        <img src="assets/img/logos/uct.svg" alt="" aria-hidden="true">
+        <img src="assets/img/logos/uj.png" alt="" aria-hidden="true">
+        <img src="assets/img/logos/ethereum.svg" alt="" aria-hidden="true">
+        <img src="assets/img/logos/abby-health.png" alt="" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- value proposition -->
+  <section id="value" class="section-solid">
+    <div class="dotfield"></div>
+    <div class="wrap" style="position: relative;">
+      <span class="kicker reveal">about us</span>
+      <h2 class="display-lg reveal" style="max-width: 24ch;">Where bold ideas meet <span class="ac-ventures">smart capital</span>, thriving <span class="ac-ecosystem">ecosystems</span>, and <span class="ac-foundation">growth for startups</span>.</h2>
+      <div class="orbit-frame reveal" data-delay="1">
+        <iframe src="orbit-embed.html" title="Saturn's three verticals in orbit" scrolling="no" loading="lazy"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- our story -->
+  <section id="story" class="section-raise">
+    <div class="wrap">
+      <span class="kicker reveal">our story</span>
+      <h2 class="display-lg reveal" style="max-width: 20ch;">Born in Cape Town. Built for the <span class="accent-word">universe</span>.</h2>
+      <section class="saturn-tl" aria-label="Saturn story timeline">
+        <div class="stl-track">
+          <span class="stl-rail"></span>
+          <ol class="stl-nodes">
+            <li class="stl-node" data-i="0">
+              <button class="stl-btn" type="button">
+                <span class="stl-dot"></span>
+                <span class="stl-yr">2022</span>
+                <span class="stl-cap">W3O LABS was born</span>
+              </button>
+            </li>
+            <li class="stl-node" data-i="1">
+              <button class="stl-btn" type="button">
+                <span class="stl-dot"></span>
+                <span class="stl-yr">2023</span>
+                <span class="stl-cap">Incubated 140+ startups across Africa</span>
+              </button>
+            </li>
+            <li class="stl-node" data-i="2">
+              <button class="stl-btn" type="button">
+                <span class="stl-dot"></span>
+                <span class="stl-yr">2025</span>
+                <span class="stl-cap">Built NOD3 developer hub, and program in LATAM</span>
+              </button>
+            </li>
+            <li class="stl-node" data-i="3">
+              <button class="stl-btn" type="button">
+                <span class="stl-dot"></span>
+                <span class="stl-yr">2026</span>
+                <span class="stl-cap">Saturn is born</span>
+              </button>
+            </li>
+          </ol>
+        </div>
+
+        <div class="stl-panel">
+          <span class="stl-ghost" aria-hidden="true"></span>
+          <p class="stl-hint">Hover a year to trace the story.</p>
+          <div class="stl-descs">
+            <p class="stl-desc" data-i="0">
+              Saturn started in Cape Town as <em>W3O LABS</em>, built on one bet. Blockchain
+              could solve real problems in Africa. It did. We shipped tools people actually
+              used and proved the thesis on the ground.
+            </p>
+            <p class="stl-desc" data-i="1">
+              The bet paid off. We backed and built alongside <em>140+ startups</em> across
+              the continent, learning firsthand what founders here need to get off the
+              ground and stay there.
+            </p>
+            <p class="stl-desc" data-i="2">
+              One frontier was never going to be enough. We opened <em>NOD3</em>, a home for
+              the next wave of builders, and carried the model into <em>LATAM</em>. AI, fintech,
+              stablecoins, the openings kept multiplying, and so did the founders chasing them.
+            </p>
+            <p class="stl-desc" data-i="3">
+              W3O LABS was built for one world. Saturn is built for the universe. We
+              now run three verticals. <span class="sat">Saturn</span> <em class="sv-ventures">ventures</em> backs founders,
+              <span class="sat">Saturn</span> <em class="sv-ecosystem">ecosystem</em> advises corporates and institutions, and
+              <span class="sat">Saturn</span> <em class="sv-foundation">foundation</em> grows the next generation of African entrepreneurs.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- verticals -->
+  <section id="verticals" class="section-solid">
+    <div class="dotfield"></div>
+    <div class="wrap" style="position: relative;">
+      <span class="kicker reveal">our services</span>
+      <h2 class="display-lg reveal">Three ways to work with us.</h2>
+      <div class="cards">
+        <article class="card c-ventures has-bg reveal">
+          <div class="glyph">
+            <img src="assets/img/brand/mark-ventures.png" alt="" aria-hidden="true">
+            <span>capital</span>
+          </div>
+          <h3><span class="sat">Saturn</span> <span class="v">ventures</span></h3>
+          <p>Early stage capital for Africa's builders. Direct investments in revenue generating businesses across fintech, AI, and Web3, structured for competitive market related returns.</p>
+          <div class="tags"><span>Investment</span><span>Fundraising</span><span>Go to Market</span></div>
+          <a href="ventures.html" class="btn">Read More</a>
+        </article>
+        <article class="card c-ecosystem has-bg reveal" data-delay="1">
+          <div class="glyph">
+            <img src="assets/img/brand/mark-ecosystem.png" alt="" aria-hidden="true">
+            <span>technology</span>
+          </div>
+          <h3><span class="sat">Saturn</span> <span class="v">ecosystem</span></h3>
+          <p>End-to-end technology services and solutions. From strategy and design through to development, testing and rollout, we engineer practical systems that deliver real returns.</p>
+          <div class="tags"><span>Software Development</span><span>AI &amp; Automation</span><span>Consulting</span></div>
+          <a href="ecosystem.html" class="btn">Read More</a>
+        </article>
+        <article class="card c-foundation has-bg reveal" data-delay="2">
+          <div class="glyph">
+            <img src="assets/img/brand/mark-foundation.png" alt="" aria-hidden="true">
+            <span>impact</span>
+          </div>
+          <h3><span class="sat">Saturn</span> <span class="v">foundation</span></h3>
+          <p>Building the next generation of entrepreneurs shaping Africa's future. Practical tools, mentorship from experienced founders, and ecosystem access for entrepreneurs overlooked by traditional systems.</p>
+          <div class="tags"><span>Ecosystem Building</span><span>Acceleration Programs</span><span>Mentorship</span></div>
+          <a href="foundation.html" class="btn">Read More</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- contact -->
+  <section id="contact" class="section-raise">
+    <div class="wrap">
+      <div class="contact-grid">
+
+        <div class="contact-left reveal">
+          <h2 class="contact-heading">get in touch</h2>
+          <p class="contact-sub">Ready to build Africa's tech future together? Whether you're a founder, corporate, institution, or investor, we want to hear from you.</p>
+          <div class="contact-decoration" aria-hidden="true"></div>
+        </div>
+
+        <form id="contact-form" class="contact-form-v2 reveal" data-delay="1"
+              action="https://formspree.io/f/xwvrdawj" method="POST" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-first">First name</label>
+              <input id="f-first" name="first_name" type="text" autocomplete="given-name" required>
+            </div>
+            <div class="field">
+              <label for="f-last">Last name</label>
+              <input id="f-last" name="last_name" type="text" autocomplete="family-name" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="f-interest">I am interested in</label>
+            <select id="f-interest" name="interest">
+              <option value="">Select one</option>
+              <optgroup label="Capital">
+                <option>Investment or funding</option>
+                <option>Fundraising support</option>
+                <option>Go to market support</option>
+              </optgroup>
+              <optgroup label="Technology">
+                <option>Software development</option>
+                <option>AI and automation</option>
+                <option>Data and analytics</option>
+                <option>Payments and infrastructure</option>
+                <option>Cloud and security</option>
+                <option>Technology strategy and roadmaps</option>
+                <option>Consulting and advisory</option>
+              </optgroup>
+              <optgroup label="Programs and impact">
+                <option>Joining a program</option>
+                <option>Becoming a mentor</option>
+                <option>University or institutional partnership</option>
+                <option>Supporting the foundation</option>
+              </optgroup>
+              <optgroup label="General">
+                <option>Partnership</option>
+                <option>Careers</option>
+                <option>Something else</option>
+              </optgroup>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" name="message" rows="5" required></textarea>
+          </div>
+          <button type="submit" class="btn"><span class="dot"></span>Send message</button>
+          <p id="form-note" class="form-note" aria-live="polite"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="dotfield" style="opacity: 0.18;"></div>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-title">Mission</div>
+        <p class="foot-mission">investing in, growing, and connecting Africa's most promising technology companies. capital, technology, and impact under one orbit.</p>
+      </div>
+      <div class="foot-right">
+        <div class="foot-title">Explore</div>
+        <ul class="foot-links">
+          <li><a class="l-ventures" href="ventures.html">ventures</a></li>
+          <li><a class="l-ecosystem" href="ecosystem.html">ecosystem</a></li>
+          <li><a class="l-foundation" href="foundation.html">foundation</a></li>
+          <li><a href="index.html#contact">Contact</a></li>
+          <li><a href="https://www.linkedin.com/company/saturnafrica" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-wordmark">Saturn</div>
+    <div class="foot-base">
+      <span>&copy; 2026 Saturn. All rights reserved.</span>
+      <!-- TODO: replace with the CIPC registration number once issued -->
+      <span>Saturn Foundation NPC &middot; Registration no. [pending]</span>
+      <span>Cape Town, South Africa</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/hero.js"></script>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
