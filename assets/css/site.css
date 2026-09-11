@@ -1485,9 +1485,12 @@ body.has-announce .vhero { padding-top: calc(var(--nav-h) + 64px + 2rem); }
 }
 
 /* foundation page: body copy runs the full width of the wrap */
-.page-foundation .lede { max-width: none; }
+.page-ventures .lede, .page-ecosystem .lede, .page-foundation .lede { max-width: none; }
+.page-ventures .display-xl + .lede, .page-ecosystem .display-xl + .lede, .page-foundation .display-xl + .lede,
 .page-foundation .lede-wide { margin-top: 2rem; }
 .page-foundation .body-wide { margin-top: 1.6rem; }
+.page-foundation .split .lede { max-width: 58ch; }
+.checklist.checklist-stack { grid-template-columns: 1fr; margin-top: 2rem; }
 .page-foundation .cta-row { margin-top: 2.6rem; }
 
 /* who should apply: checklist */
