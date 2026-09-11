@@ -876,7 +876,7 @@ footer { border: 0; background: var(--bg); box-shadow: none; }
 
 /* Clients: quiet logo grid, no copy. */
 .client-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr);
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: clamp(0.9rem, 2vw, 1.6rem);
   margin-top: var(--block-gap);
 }

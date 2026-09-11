@@ -92,6 +92,8 @@ Vercel detects this as a static site. No framework preset, no build command, no 
 
 **NPC registration number.** Every footer carries "Saturn Foundation NPC · Registration no. [pending]". Replace `[pending]` in all four HTML files once CIPC issues the number.
 
+**Two client logos are hidden.** Virgin Active and Abby Health are still being pitched, so their tiles are commented out (search for "hidden until the pitch lands") in `ecosystem.html` and `index.html`. Delete the comment markers to show them again.
+
 **No privacy policy yet.** The contact form collects personal data, which POPIA requires you to account for.
 
 ---
