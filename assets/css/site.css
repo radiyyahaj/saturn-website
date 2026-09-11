@@ -504,7 +504,13 @@ footer { position: relative; border: 0; background: var(--bg); padding: var(--se
   .nav-menu a.nav-link { font-size: 1.1rem; font-family: var(--font-display); letter-spacing: 0.2em; text-transform: uppercase; }
   .nav-menu a.nav-link.active { background: #fff; color: #141414; }
   /* visibility must inherit here: a child set to visible stays tappable even when the closed menu is hidden */
-  .nav-drop .drop-panel { position: static; transform: none; opacity: 1; visibility: inherit; box-shadow: none; border: 0; background: transparent; text-align: center; }
+  .nav-drop .drop-panel,
+  .nav-drop:hover .drop-panel, .nav-drop:focus-within .drop-panel {
+    position: static; left: auto; top: auto; min-width: 0; transform: none;
+    opacity: 1; visibility: inherit; box-shadow: none; border: 0; background: transparent; text-align: center;
+  }
+  .drop-panel::before { display: none; }
+  .drop-item { align-items: center; }
   .nav-burger { display: block; }
   .contact-form { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }

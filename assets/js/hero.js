@@ -79,6 +79,9 @@
   function rebuildSets() { INK = makeSet(INK_COLOR); }
 
   function resize() {
+    /* phones fire resize as the address bar shows and hides; a height only
+       nudge is not worth rebuilding (and flashing) the whole field for */
+    if (W && window.innerWidth === W && Math.abs(window.innerHeight - H) < 160) return;
     W = window.innerWidth; H = window.innerHeight;
     cv.width = W * DPR; cv.height = H * DPR; CX = W / 2; CY = H / 2;
     var mob = W < 600;
@@ -96,12 +99,14 @@
   window.addEventListener("mousemove", function (e) { mx = e.clientX; my = e.clientY; });
   window.addEventListener("mouseout", function () { mx = -1e4; my = -1e4; });
 
-  window.addEventListener("wheel", function (e) {
-    var v = Math.min(1, Math.abs(e.deltaY) * 0.004);
-    dissolve = Math.min(1, dissolve + v * 0.55); glow = Math.min(1, glow + v * 0.5);
-  }, { passive: true });
-  window.addEventListener("touchmove", function () {
-    dissolve = Math.min(1, dissolve + 0.07); glow = Math.min(1, glow + 0.08);
+  /* the dissolve follows how far down the page you are, so a small scroll
+     loosens the field a little and a full screen of scroll clears it.
+     Scroll speed only adds a touch of glow. */
+  var lastY = window.scrollY;
+  window.addEventListener("scroll", function () {
+    var dy = window.scrollY - lastY; lastY = window.scrollY;
+    if (still) return;
+    glow = Math.min(1, glow + Math.min(1, Math.abs(dy) * 0.004) * 0.35);
   }, { passive: true });
 
   var ESQ = 0.36, ROT = -Math.PI / 6;
@@ -114,14 +119,15 @@
 
   function frame(tms) {
     /* skip work when the hero is scrolled out of view */
-    if (window.scrollY > H * 1.25) { if (!still) requestAnimationFrame(frame); return; }
+    if (window.scrollY > H * 1.25) { requestAnimationFrame(frame); return; }
     var t = tms * 0.001;
     ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
     ctx.fillStyle = BG; ctx.fillRect(0, 0, W, H);
     var fade = Math.min(1, t / 2);
-    dissolve *= 0.94; if (dissolve < 0.004) dissolve = 0;
+    var target = still ? 0 : Math.min(1, window.scrollY / (H * 0.7));
+    dissolve += (target - dissolve) * 0.1; if (dissolve < 0.004) dissolve = 0;
     glow *= 0.95; if (glow < 0.004) glow = 0;
-    spin += CFG.spin * 0.012 * (1 + glow * 4);
+    if (!still) spin += CFG.spin * 0.012 * (1 + glow * 4);
 
     if (hint) hint.style.opacity = String(Math.max(0, 1 - glow * 2 - window.scrollY / (H * 0.4)));
 
@@ -145,7 +151,7 @@
         if (tv > 0.003) trail[ti] = tv * 0.94; else trail[ti] = 0;
         var Xs = col * CELL + CELL / 2 - CX, Ys = row * CELL + CELL / 2 - CY;
         var X = Xs * cA - Ys * sA, Y = Xs * sA + Ys * cA;
-        var breathe = 1 + 0.018 * Math.sin(t * 0.6);
+        var breathe = still ? 1 : 1 + 0.018 * Math.sin(t * 0.6);
         var Rb = R * breathe;
         var lum = 0, which = null, seq = 0;
         var u = X, v = Y / ESQ;
@@ -227,7 +233,7 @@
       ctx.restore();
     }
     ctx.globalAlpha = 1;
-    if (!still) requestAnimationFrame(frame);
+    requestAnimationFrame(frame);
   }
-  if (still) frame(2500); else requestAnimationFrame(frame);
+  requestAnimationFrame(frame);
 })();
