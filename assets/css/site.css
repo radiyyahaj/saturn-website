@@ -511,7 +511,7 @@ footer { position: relative; border: 0; background: var(--bg); padding: var(--se
 
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
-  .marquee-track { animation: none; }
+  .marquee-track { animation-duration: 120s; }
   html { scroll-behavior: auto; }
 }
 
@@ -1087,6 +1087,7 @@ footer {
   .foot-top { grid-template-columns: 1fr; gap: 2.5rem; }
   .foot-right { text-align: left; }
   .foot-links a:hover { padding-right: 0; padding-left: 0.4rem; }
+  .foot-wordmark { font-size: 13vw; letter-spacing: 0.1em; }
 }
 
 
