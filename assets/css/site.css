@@ -796,7 +796,7 @@ footer { border: 0; background: var(--bg); box-shadow: none; }
   transition: box-shadow 0.45s cubic-bezier(0.2, 0.7, 0.2, 1), transform 0.45s cubic-bezier(0.2, 0.7, 0.2, 1);
   outline: none;
 }
-.svc:hover .svc-inner, .svc:focus-within .svc-inner {
+.svc:hover .svc-inner, .svc:focus-within .svc-inner, .svc.is-open .svc-inner {
   transform: translateY(-3px);
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.35),
@@ -824,7 +824,7 @@ footer { border: 0; background: var(--bg); box-shadow: none; }
     transform 0.5s cubic-bezier(0.2, 0.7, 0.2, 1),
     margin-top 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.svc:hover .svc-more, .svc:focus-within .svc-more {
+.svc:hover .svc-more, .svc:focus-within .svc-more, .svc.is-open .svc-more {
   max-height: 240px; opacity: 1; margin-top: 1rem; transform: none;
 }
 
@@ -857,8 +857,8 @@ footer { border: 0; background: var(--bg); box-shadow: none; }
   opacity: 0;
   transition: opacity 0.5s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
-.page-ventures .svc:hover .svc-inner::before, .page-ventures .svc:focus-within .svc-inner::before,
-.page-ecosystem .svc:hover .svc-inner::before, .page-ecosystem .svc:focus-within .svc-inner::before { opacity: 1; }
+.page-ventures .svc:hover .svc-inner::before, .page-ventures .svc:focus-within .svc-inner::before, .page-ventures .svc.is-open .svc-inner::before,
+.page-ecosystem .svc:hover .svc-inner::before, .page-ecosystem .svc:focus-within .svc-inner::before, .page-ecosystem .svc.is-open .svc-inner::before { opacity: 1; }
 .page-ventures .svc-inner > *, .page-ecosystem .svc-inner > * { position: relative; }
 .page-ventures .svc h3, .page-ecosystem .svc h3 { color: #fff; }
 .page-ventures .svc-teaser, .page-ventures .svc-more,
@@ -939,9 +939,20 @@ footer { border: 0; background: var(--bg); box-shadow: none; }
   .stl-btn { align-items: flex-start; text-align: left; }
   .stl-cap { text-align: left; }
 }
-@media (hover: none), (max-width: 640px) {
-  .svc-inner { min-height: 0; }
-  .svc-more { max-height: none; opacity: 1; margin-top: 1rem; overflow: visible; transform: none; }
+/* touch: cards start collapsed and open on tap (site.js toggles .is-open).
+   Hover states can stick after a tap on touch screens, so they are switched
+   off here and only the tapped state counts. */
+@media (hover: none) {
+  .svc-inner { min-height: 240px; cursor: pointer; }
+  .svc:hover .svc-inner { transform: none; }
+  .svc:hover .svc-more { max-height: 0; opacity: 0; margin-top: 0; transform: translateY(6px); }
+  .page-ventures .svc:hover .svc-inner::before, .page-ecosystem .svc:hover .svc-inner::before { opacity: 0; }
+  .svc.is-open .svc-inner { transform: none; }
+  .svc.is-open .svc-more { max-height: 320px; opacity: 1; margin-top: 1rem; transform: none; }
+  .page-ventures .svc.is-open .svc-inner::before, .page-ecosystem .svc.is-open .svc-inner::before { opacity: 1; }
+}
+@media (max-width: 640px) {
+  .svc-inner { min-height: 240px; }
 }
 
 

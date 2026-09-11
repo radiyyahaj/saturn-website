@@ -75,6 +75,22 @@
     tlIo.observe(tl);
   }
 
+  /* service cards on touch screens: tap to open, tap again or tap another to close.
+     Focus is dropped on touch so a lingering :focus-within cannot hold a card open. */
+  if (window.matchMedia("(hover: none)").matches) {
+    var cards = [].slice.call(document.querySelectorAll(".svc"));
+    cards.forEach(function (card) {
+      var inner = card.querySelector(".svc-inner");
+      if (!inner) return;
+      inner.removeAttribute("tabindex");
+      inner.addEventListener("click", function () {
+        var open = card.classList.contains("is-open");
+        cards.forEach(function (c) { c.classList.remove("is-open"); });
+        if (!open) card.classList.add("is-open");
+      });
+    });
+  }
+
   /* scroll reveal */
   var io = new IntersectionObserver(
     function (entries) {
