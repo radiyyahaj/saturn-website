@@ -140,6 +140,7 @@ h1, h2, h3, .display {
 }
 
 /* ---------- layout ---------- */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 .wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--pad); padding-right: var(--pad); }
 section { position: relative; padding: var(--section-y) 0; }
 .section-solid { background: var(--bg); }
