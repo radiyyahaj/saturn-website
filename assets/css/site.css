@@ -497,13 +497,14 @@ footer { position: relative; border: 0; background: var(--bg); padding: var(--se
     position: fixed; inset: 0; z-index: 55;
     flex-direction: column; justify-content: center; gap: 2rem;
     background: #141414;
-    opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s;
+    opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.3s, visibility 0.3s;
   }
-  body.nav-open .nav-menu { opacity: 1; visibility: visible; }
+  body.nav-open .nav-menu { opacity: 1; visibility: visible; pointer-events: auto; }
   .nav-menu li { text-align: center; width: 100%; }
   .nav-menu a.nav-link { font-size: 1.1rem; font-family: var(--font-display); letter-spacing: 0.2em; text-transform: uppercase; }
   .nav-menu a.nav-link.active { background: #fff; color: #141414; }
-  .nav-drop .drop-panel { position: static; transform: none; opacity: 1; visibility: visible; box-shadow: none; border: 0; background: transparent; text-align: center; }
+  /* visibility must inherit here: a child set to visible stays tappable even when the closed menu is hidden */
+  .nav-drop .drop-panel { position: static; transform: none; opacity: 1; visibility: inherit; box-shadow: none; border: 0; background: transparent; text-align: center; }
   .nav-burger { display: block; }
   .contact-form { grid-template-columns: 1fr; }
   .stats-grid { grid-template-columns: 1fr 1fr; }
