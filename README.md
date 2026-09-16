@@ -12,14 +12,17 @@ Marketing site for Saturn. Four pages, no build step. Plain HTML, CSS and vanill
 ├── ventures.html           Saturn ventures
 ├── ecosystem.html          Saturn ecosystem
 ├── foundation.html         Saturn startup school
+├── apply.html              Startup School application, one question per view
 ├── orbit-embed.html        Orbit widget, loaded in an iframe by index.html
 │
 ├── assets/
 │   ├── css/site.css        The whole design system, one file
+│   ├── css/apply.css       Application page only
 │   ├── js/
 │   │   ├── site.js         Nav, scroll reveals, counters, contact form
 │   │   ├── hero.js         ASCII Saturn canvas, homepage only
-│   │   └── announce.js     Announcement bar letter animation (GSAP), foundation only
+│   │   ├── announce.js     Announcement bar letter animation (GSAP), foundation only
+│   │   └── apply.js        Application flow, validation, localStorage, Formspree submit
 │   ├── fonts/              FG Futurist + Acid Grotesk
 │   └── img/
 │       ├── brand/          Saturn mark, per vertical marks
@@ -70,10 +73,10 @@ Vercel detects this as a static site. No framework preset, no build command, no 
 
 | Page | Link | Waiting on |
 |---|---|---|
-| foundation.html | Announcement bar, nav "Apply now", landing "Apply now", hero "Apply now" | Apply typeform (all four currently jump to the Apply, mentor, or fund section) |
-| foundation.html | Apply, mentor, or fund: "Apply now" | Apply typeform, same URL |
 | foundation.html | Apply, mentor, or fund: "Become a mentor" | Mentor typeform |
 | foundation.html | "Read more about the program" | Program detail page |
+
+**The application (apply.html) posts to the same Formspree form** as JSON, subject `School 001 application | name | business`, reply to set to the applicant. Free plan limits: 50 submissions a month across the contact form and applications together, no auto reply to the applicant, no file uploads (the photo question takes a link instead). Upgrade the form before applications open in earnest.
 
 **The contact form posts to Formspree** (`formspree.io/f/xwvrdawj`), carried over from the previous saturn.africa site. Confirm submissions still reach the right inbox.
 
