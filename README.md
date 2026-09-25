@@ -76,6 +76,8 @@ Vercel detects this as a static site. No framework preset, no build command, no 
 | foundation.html | Apply, mentor, or fund: "Become a mentor" | Mentor typeform |
 | foundation.html | "Read more about the program" | Program detail page |
 
+**Preview the application without filling it in:** `apply.html?preview=1` adds a bar at the bottom that walks every screen, including the three endings. Nothing is saved or submitted in preview mode.
+
 **The application (apply.html) posts to the same Formspree form** as JSON, subject `School 001 application | name | business`, reply to set to the applicant. Free plan limits: 50 submissions a month across the contact form and applications together, no auto reply to the applicant, no file uploads (the photo question takes a link instead). Upgrade the form before applications open in earnest.
 
 **The contact form posts to Formspree** (`formspree.io/f/xwvrdawj`), carried over from the previous saturn.africa site. Confirm submissions still reach the right inbox.
