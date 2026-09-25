@@ -204,3 +204,24 @@ body.is-preview .ap-main { padding-bottom: 6rem; }
   body.is-preview .ap-actions { bottom: 4.6rem; }
   body.is-preview .ap-main { padding-bottom: 9rem; }
 }
+
+/* cofounder blocks */
+.ap-rep { display: grid; gap: 0.9rem; margin-top: 1rem; }
+.ap-rep-card { padding: 1.2rem 1.25rem 1.35rem; border-radius: 16px; background: #fff; border: 1px solid var(--line); box-shadow: var(--sh-1); display: grid; gap: 0.9rem; }
+.ap-rep-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; }
+.ap-rep-n { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--foundation-deep); }
+.ap-rep-x { appearance: none; background: none; border: 0; cursor: pointer; padding: 0; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); transition: color 0.2s; }
+.ap-rep-x:hover { color: #b5533f; }
+.ap-rep-field { display: grid; gap: 0.4rem; }
+.ap-rep-label { font-size: 0.86rem; color: var(--ink-soft); }
+.ap-rep-field .ap-input { font-size: 1rem; padding: 0.8rem 1rem; }
+.ap-add {
+  appearance: none; cursor: pointer; margin-top: 0.9rem;
+  font-family: var(--font-mono); font-size: 0.64rem; letter-spacing: 0.16em; text-transform: uppercase;
+  padding: 0.75rem 1.3rem; border-radius: 999px;
+  border: 1px dashed color-mix(in srgb, var(--foundation) 55%, var(--line));
+  background: transparent; color: var(--foundation-deep);
+  transition: background 0.2s, border-color 0.2s;
+}
+.ap-add:hover { background: color-mix(in srgb, var(--foundation) 12%, #fff); border-style: solid; }
+.ap-add[hidden] { display: none; }
