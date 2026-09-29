@@ -79,8 +79,8 @@
           opts: ["No. This is what I do.", "Yes. A job as well.", "Yes. Another business as well."] },
         { id: "keeps_books", kind: "yesno", q: "Do you keep a separate business bank account, or a monthly record of money in and money out?", help: "“Not yet” is an honest answer. This is part of what the school teaches.", yes: "Yes", no: "Not yet", req: true },
         { id: "cipc", kind: "choice", q: "Is the business registered with CIPC?", help: "Registration is not a requirement to apply.", req: true, opts: ["Yes", "In progress", "Not yet"] },
-        { id: "sector", kind: "select", q: "Which sector is your business in?", help: "Every sector is welcome.", req: true,
-          opts: ["Food and hospitality", "Retail and consumer", "Services", "Software and digital", "Creative and media", "Health and wellness", "Education", "Trade and manufacturing", "Agriculture", "Other"] },
+        { id: "sector", kind: "select", q: "Which sector is your business in?", req: true,
+          opts: ["Software and digital", "Consumer products and brands", "Creative and media", "Marketplaces and platforms", "Health and wellness", "Education", "Financial technology", "Retail and commerce", "Other"] },
         { id: "link", kind: "url", q: "A link to your business, if you have one", help: "A website, an Instagram page, a WhatsApp catalogue or an app store listing.", optional: true },
         { id: "photo_url", kind: "url", q: "A link to one photo or screenshot of your business", help: "A shop front, a product, an app screen, an invoice or a booking calendar. Put it in Google Drive, Dropbox or iCloud and paste the share link here.", optional: true }
       ] }] },

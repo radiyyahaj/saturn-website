@@ -12,7 +12,9 @@ Marketing site for Saturn. Four pages, no build step. Plain HTML, CSS and vanill
 ├── ventures.html           Saturn ventures
 ├── ecosystem.html          Saturn ecosystem
 ├── foundation.html         Saturn startup school
-├── apply.html              Startup School application, one question per view
+├── register.html           Founder interest form, live on the foundation page
+├── mentor.html             Mentor interest form, live on the foundation page
+├── apply.html              Full Startup School application. PARKED, nothing links to it
 ├── orbit-embed.html        Orbit widget, loaded in an iframe by index.html
 │
 ├── assets/
@@ -22,7 +24,8 @@ Marketing site for Saturn. Four pages, no build step. Plain HTML, CSS and vanill
 │   │   ├── site.js         Nav, scroll reveals, counters, contact form
 │   │   ├── hero.js         ASCII Saturn canvas, homepage only
 │   │   ├── announce.js     Announcement bar letter animation (GSAP), foundation only
-│   │   └── apply.js        Application flow, validation, localStorage, Formspree submit
+│   │   ├── apply.js        Application flow, validation, localStorage, Formspree submit
+│   │   └── interest.js     The two short interest forms
 │   ├── fonts/              FG Futurist + Acid Grotesk
 │   └── img/
 │       ├── brand/          Saturn mark, per vertical marks
@@ -75,6 +78,8 @@ Vercel detects this as a static site. No framework preset, no build command, no 
 |---|---|---|
 | foundation.html | Apply, mentor, or fund: "Become a mentor" | Mentor typeform |
 | foundation.html | "Read more about the program" | Program detail page |
+
+**The full application is parked.** `apply.html` is built and tested but nothing links to it, and `robots.txt` keeps it out of search while applications are closed. The foundation page points at `register.html` and `mentor.html` instead. To reopen applications: change the announcement bar and the four Register interest links on `foundation.html` back to `apply.html`, and drop the Disallow line from `robots.txt`.
 
 **Preview the application without filling it in:** `apply.html?preview=1` adds a bar at the bottom that walks every screen, including the three endings. Nothing is saved or submitted in preview mode.
 

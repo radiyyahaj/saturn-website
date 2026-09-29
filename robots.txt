@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /docs/
+Disallow: /apply.html
 
 Sitemap: https://saturn.africa/sitemap.xml
