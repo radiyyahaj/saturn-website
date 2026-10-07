@@ -1,3 +1,11 @@
+> **SUPERSEDED, 7 October 2026.** The hero, services intro and CTA copy in this
+> brief tracks Entelect's homepage almost word for word, including their page
+> title "End-to-end technology services and solutions" and their "START THE
+> CONVERSATION" call to action. It also uses words on Saturn's banned list
+> ("solutions" as a noun for what we sell, "robust"). The live page has been
+> rewritten in Saturn's own words. Do not reuse the copy below. The structure,
+> the six service areas and the UI notes still hold.
+
 # Saturn Ecosystem — Website Handoff
 
 **Purpose**  

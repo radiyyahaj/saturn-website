@@ -110,5 +110,7 @@ Vercel detects this as a static site. No framework preset, no build command, no 
 
 ## Notes
 
+- The ecosystem page was rewritten on 7 October 2026. The original copy came from `docs/handoffs/saturn-ecosystem-website-handoff.md`, which tracked Entelect's homepage closely. Check new briefs against the competitor they are likely drafted from before building to them.
+
 - Hero images are served at two resolutions through CSS `image-set()`. Retina screens pull the `@2x` files, everything else gets the smaller ones. Do not compress them harder — the film grain is the artwork and it resists compression, so quality costs almost nothing here.
 - `docs/DESIGN-SYSTEM.md` is the reference for colours, the Saturn lockup, spacing rhythm and every component.
