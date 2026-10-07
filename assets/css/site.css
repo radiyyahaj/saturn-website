@@ -147,14 +147,35 @@ section { position: relative; padding: var(--section-y) 0; }
 .section-raise { background: var(--bg); }
 
 /* ---------- nav: floating dark pill ---------- */
+/* The nav rides with the page over the first screen, then locks to the top
+   with a backdrop behind it. Without the backdrop the pill floats and body
+   copy slides visibly underneath it. */
 .navbar {
-  position: fixed; top: 18px; left: 0; right: 0; z-index: 50;
+  position: absolute; top: 18px; left: 0; right: 0; z-index: 50;
   display: flex; justify-content: center;
   pointer-events: none;
 }
+.navbar.is-stuck {
+  position: fixed;
+  animation: nav-drop 0.34s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
+/* full width backdrop, so nothing shows through behind the pill */
+.navbar.is-stuck::before {
+  content: ""; position: absolute; left: 0; right: 0;
+  top: -18px; bottom: -18px;
+  background: color-mix(in srgb, var(--bg) 82%, transparent);
+  -webkit-backdrop-filter: blur(16px); backdrop-filter: blur(16px);
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent);
+  pointer-events: none;
+}
+@keyframes nav-drop { from { transform: translateY(-120%); } to { transform: none; } }
+@media (prefers-reduced-motion: reduce) { .navbar.is-stuck { animation: none; } }
+/* the nav opens as a full screen sheet on phones, which has to sit still */
+body.nav-open .navbar { position: fixed; }
+body.nav-open .navbar::before { display: none; }
 .nav-pill {
   pointer-events: auto;
-  position: relative;
+  position: relative; z-index: 1;
   display: flex; align-items: center; gap: 0.2rem;
   border-radius: 999px;
   padding: 5px;

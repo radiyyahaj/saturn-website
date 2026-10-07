@@ -16,6 +16,40 @@
     setActive(document.querySelector(".nav-drop > a.nav-link"));
   }
 
+  /* nav: rides with the page over the first screen, then locks to the top.
+     A sentinel sits where the switch happens and an observer watches it, so
+     this does not depend on scroll events firing. */
+  (function () {
+    var nav = document.querySelector(".navbar");
+    if (!nav) return;
+
+    var mark = document.createElement("div");
+    mark.setAttribute("aria-hidden", "true");
+    mark.style.cssText = "position:absolute;left:0;width:1px;height:1px;pointer-events:none;visibility:hidden;";
+    function place() {
+      var hero = document.querySelector(".vhero, #hero");
+      mark.style.top = (hero ? Math.max(120, hero.offsetHeight - 80) : 120) + "px";
+    }
+    place();
+    document.body.appendChild(mark);
+
+    function set(on) { nav.classList.toggle("is-stuck", on); }
+
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        var e = entries[0];
+        /* above the fold means we have scrolled past it */
+        set(!e.isIntersecting && e.boundingClientRect.top < 0);
+      }, { threshold: 0 });
+      io.observe(mark);
+    }
+    /* fallback for anything the observer misses */
+    function byScroll() { set(window.scrollY > parseInt(mark.style.top, 10)); }
+    window.addEventListener("scroll", byScroll, { passive: true });
+    window.addEventListener("resize", function () { place(); byScroll(); });
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(place);
+  })();
+
   /* mobile burger */
   var burger = document.querySelector(".nav-burger");
   if (burger) {
